@@ -4,7 +4,7 @@
 #include <math.h>
 #define LUMP 1
 
-static long int numSteps = 1000000000;
+static long int numSteps = 1000;
 
 int main(int argc, char **argv) {
   
@@ -28,11 +28,13 @@ int main(int argc, char **argv) {
   double dx = 1./numSteps;
   double x  = dx*0.50;
   
+  // MPI_Scatter();
+
   for (int i=procID; i<numSteps; i+=numP) {
     x = (i+.5)*dx;
     myPart += 4./(1.+x*x);
   }
-  
+
   myPart *= dx;
 
   //  localData[0] = myPart;

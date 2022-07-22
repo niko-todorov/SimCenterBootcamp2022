@@ -20,7 +20,16 @@ int main(int argc, char **argv) {
   float a = atof(argv[1]);
   float b = atof(argv[2]);
   float c = atof(argv[3]);
+  
+  float x1, x2, _d = b*b-4*a*c;
+  if (_d<0) {
+    printf("The 2 roots are complex numbers\n");
+    exit(-2);
+  }
+  x1 = (-b-sqrtf(_d))/(2*a);
+  x2 = (-b+sqrtf(_d))/(2*a);
 
+  printf("x1 = %f, x2 = %f\n", x1, x2);
   printf("Have a Nice Day!\n");
   return 0;
 }
