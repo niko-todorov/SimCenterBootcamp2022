@@ -23,5 +23,7 @@ export OMP_NUM_THREADS=4
 ./pi
 export OMP_NUM_THREADS=8
 ./pi
-
-
+# Chapman cluster slurm examples
+# srun --pty --partition defq --ntasks=1 --cpus-per-task=2 --mem-per-cpu=2048 bash
+# srun --pty --partition defq --reservation=lumopt_testing --cpus-per-task=4 --mem-per-cpu=2048 --ntasks=4 --time=30:00 bash
+# idev # on Frontera
